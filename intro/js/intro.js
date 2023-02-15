@@ -77,17 +77,31 @@ class Drink{
         this.name=name
     }
     info(){
-        return "la bebida es:"+this.name
+        return "la bebida es: "+" "+this.name
     }
 }
 //funcional //!TODA FUNCION ES UNA CLASE
 function Drink2(name){
     this.name=name
     this.info=function(){
-        return "la bebida es:"+this.name
+        return "la bebida es: "+" "+this.name
     }
 }
 const drink=new Drink("Agua")
 const drink2 =new Drink2("Tequila")
 console.log(drink.info());
 console.log(drink2.info());
+
+//*7ma Herencia
+class Beer extends Drink{
+    constructor(name,alcohol){
+        super(name)
+        this.alcohol=alcohol
+    }
+    info(){
+        return super.info()+ " EL contenido en alcohol es + "+this.alcohol
+    }
+}
+
+const beer =new Beer('Heineken','4.7')
+console.log(beer.info());
